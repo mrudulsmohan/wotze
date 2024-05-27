@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wotze/homepage/home_page.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CommonAppBar({super.key});
@@ -13,11 +14,17 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
     // double screenHeight = screenSize.height;
     return SafeArea(
         child: AppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: Colors.white,
       title: Row(children: [
         IconButton(
           icon: Icon(Icons.arrow_back_ios), // Replace with your chevron icon
           onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
+                return Homescreen();
+              },
+            ));
             // Implement navigation or other action
           },
         ),
